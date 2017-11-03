@@ -1,0 +1,4 @@
+[13-Mar-2016 04:00:04 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/aspenplaners/public_html/pil/wp-content/themes/panabode/functions.php on line 43
+[13-Mar-2016 04:00:04 UTC] PHP Fatal error:  Call to undefined function dynamic_sidebar() in /home/aspenplaners/public_html/pil/wp-content/themes/panabode/footer.php on line 9
+[13-Mar-2016 04:42:25 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/aspenplaners/public_html/pil/wp-content/themes/panabode/functions.php on line 43
+[13-Mar-2016 04:42:25 UTC] PHP Fatal error:  Call to undefined function dynamic_sidebar() in /home/aspenplaners/public_html/pil/wp-content/themes/panabode/footer.php on line 9

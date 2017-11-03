@@ -1,0 +1,98 @@
+{
+    "key": "group_582f402e4ceef",
+    "title": "Homes",
+    "fields": [
+        {
+            "key": "field_551d2d22236db",
+            "label": "Rancher Plans",
+            "name": "rancher_plans",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 1,
+            "tabs": "all"
+        },
+        {
+            "key": "field_551d2d12236d9",
+            "label": "Two Storey Loft Plans",
+            "name": "two_storey_loft_plans",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 1,
+            "tabs": "all"
+        },
+        {
+            "key": "field_58c89ea4f3b5c",
+            "label": "Tiny Homes",
+            "name": "tiny_homes",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_56c14d7593976",
+            "label": "Floor Plans PDF",
+            "name": "floor_plans_pdf",
+            "type": "file",
+            "instructions": "Upload a floor plan, that will be available to each individual home.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "library": "uploadedTo",
+            "return_format": "url",
+            "min_size": 0,
+            "max_size": 0,
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "38"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1490308706
+}
