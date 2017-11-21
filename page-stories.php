@@ -93,7 +93,10 @@
                                 // add markers
                                 $markers.each(function(){
                                     
-                                    add_marker( $(this), map );
+                                    var dataAttr = $(this).data("hascontent");
+                                    add_marker( $(this), map, dataAttr );
+
+                                    //console.log($(this).data("hascontent"));
                                     
                                 });
                                 
@@ -123,7 +126,10 @@
                             *  @return  n/a
                             */
 
-                            function add_marker( $marker, map ) {
+                            function add_marker( $marker, map, attr ) {
+
+                                console.log( attr );
+
 
                                 // var
                                 var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
@@ -145,26 +151,29 @@
                                 // add to array
                                 map.markers.push( marker );
 
-                                // if marker contains HTML, add it to an infoWindow
-                                if( $marker.html() && $marker.attr('data-pin') == '' )
-                                {
-                                    // Store previous infowindows so we can close it
-                                    var previous_window = false;
 
-                                    // show info window when marker is clicked
-                                    google.maps.event.addListener(marker, 'click', function() {
+                                if ( attr == 'hasdata') {
+                                    // if marker contains HTML, add it to an infoWindow
+                                    if( $marker.html() && $marker.attr('data-pin') == '' )
+                                    {
+                                        // Store previous infowindows so we can close it
+                                        var previous_window = false;
 
-                                    var content = '<div class="infobox">' + $marker.html() + '</div>';
-                                    var infowindow = new google.maps.InfoWindow({
-                                        content     :  content 
-                                    });
+                                        // show info window when marker is clicked
+                                        google.maps.event.addListener(marker, 'click', function() {
 
-                                        // Save current infowindow into a variable
-                                        infowindow.setContent(content);
-                                        infowindow.open( map, marker);
+                                        var content = '<div class="infobox">' + $marker.html() + '</div>';
+                                        var infowindow = new google.maps.InfoWindow({
+                                            content     :  content 
+                                        });
+
+                                            // Save current infowindow into a variable
+                                            infowindow.setContent(content);
+                                            infowindow.open( map, marker);
 
 
-                                    });
+                                        });
+                                    }
                                 }
 
                             }
@@ -270,16 +279,20 @@
                              
                                      $map = get_field('map'); // get map array
                                     // Post data goes here.
+
+                                    if (get_the_content() || get_post_thumbnail_id()):
+                                        $is_data = "hasdata";
+                                    else:
+                                        $is_data = "nodata";
+                                    endif;
                              
-                               
-                                    
                             ?>
                                         
 
-                                        <div class="marker" style="display: none;" data-pin="<?php echo get_field('show_map_pin_only'); ?>" data-lat="<?php echo $map['lat']; ?>" data-lng="<?php echo $map['lng']; ?>">
+                                        <div class="marker" style="display: none;" data-hascontent="<?php echo $is_data; ?>" data-pin="<?php echo get_field('show_map_pin_only'); ?>" data-lat="<?php echo $map['lat']; ?>" data-lng="<?php echo $map['lng']; ?>">
                                            
 
-                                        <h4><?php echo get_the_title(); ?></h4>
+                                        
 
 
                                         <?php if (wpmd_is_phone()) {
